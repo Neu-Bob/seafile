@@ -6,7 +6,7 @@ services:
     ports:
       - "9080:80"
     environment:
-      SEAFILE_URL: 'http://seafile.example.com'
+      SEAFILE_URL: 'http://seafile.neubaum.com'
     links:
       - mysql
     volumes:
