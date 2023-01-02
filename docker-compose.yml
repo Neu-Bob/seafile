@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  seafile:
+    image: foxel/seafile:9.0.8
+    ports:
+      - "9080:80"
+    environment:
+      SEAFILE_URL: 'http://seafile.example.com'
+    links:
+      - mysql
+    volumes:
+      - seafile:/seafile
+  mysql:
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+    volumes:
+      - mysql:/var/lib/mysql
+    image: mysql:5.7
+
+volumes:
+  mysql:
+  seafile:
